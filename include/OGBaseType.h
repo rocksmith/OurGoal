@@ -36,17 +36,6 @@ typedef std::basic_string<OGChar, std::char_traits<OGChar>, std::allocator<OGCha
 typedef std::basic_string<OGWChar, std::char_traits<OGWChar>, std::allocator<OGWChar> > OGWString;
 typedef std::basic_string<OGTChar, std::char_traits<OGTChar>, std::allocator<OGTChar> > OGTString;
 
-typedef struct tagOGDATE
-{
-	OGInt16 year;
-	OGInt8  month;
-	OGInt8  day;
-	OGInt8  hour;
-	OGInt8  minute;
-	OGInt8  second;
-}S_OGDate;
-
-
 #endif//_WIN32
 
 #endif //__OG_BASETYPE_H__

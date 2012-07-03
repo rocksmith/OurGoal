@@ -10,23 +10,32 @@ typedef struct tagOGLINK
 
 typedef struct tagOGUSER
 {
-	OGTString strName;
+	OGString strName;
 	//TODO: other property
 }S_OGUser;
 
 typedef struct tagOGPLAN
 {
-	OGTString strDescription;
-	S_OGDate startDate;
-	S_OGDate endDate;
-	S_OGUser* pUser;
+	OGString strDescription;
+	S_OGTime tmStart;
+	S_OGTime tmEnd;
 }S_OGPlan;
+
+typedef struct tagOGProject
+{
+    OGString strProjectName;
+    S_OGTime tmCreate;
+}S_OGProject;
 
 typedef struct tagOGPLANS
 {
-	OGTString strDescription;
-	S_OGLink* pLinkInfo;
-	S_OGPlan* 
+    OGString strDescription;
+    S_OGLink* pLinkInfo;
+    S_OGPlan* 
 
 }S_OGPlans;
+typedef struct tagProjectContainer
+{
+    S_OGProject* 
+};
 #endif//__OG_CORETYPE_H__

@@ -241,6 +241,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\..\..\include\OGExtType.h"
+				>
+			</File>
+			<File
 				RelativePath=".\stdafx.h"
 				>
 			</File>

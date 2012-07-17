@@ -177,6 +177,18 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
+				RelativePath=".\C_OGCoreFactory.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\C_OGCoreObject.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\C_OGUser.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\dllmain.cpp"
 				>
 				<FileConfiguration
@@ -197,14 +209,6 @@
 						CompileAsManaged="0"
 					/>
 				</FileConfiguration>
-			</File>
-			<File
-				RelativePath=".\OGCore.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\OGDate.cpp"
-				>
 			</File>
 			<File
 				RelativePath=".\stdafx.cpp"
@@ -233,15 +237,23 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
+				RelativePath=".\C_OGCoreFactory.h"
+				>
+			</File>
+			<File
+				RelativePath=".\C_OGCoreObject.h"
+				>
+			</File>
+			<File
+				RelativePath=".\C_OGUser.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\include\OGBaseType.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\include\OGCore\OGCoreType.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\..\..\include\OGExtType.h"
+				RelativePath="..\..\include\OGExtType.h"
 				>
 			</File>
 			<File

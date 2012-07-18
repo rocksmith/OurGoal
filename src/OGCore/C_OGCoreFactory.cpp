@@ -14,7 +14,7 @@ C_OGCoreObject* C_OGCoreFactory::CreateObject( const OGString& strType )
 {
     S_OGTime tmCreate;
     OGGetTime(tmCreate);
-    if (OGStriCmp(strType.c_str(), "OGUser") == 0)
+    if (OGStriCmp(strType.c_str(), _T("OGUser")) == 0)
     {
         return new C_OGUser(tmCreate);
     } 

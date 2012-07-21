@@ -13,12 +13,14 @@ typedef unsigned short   OGUint16;
 typedef unsigned int     OGUint32;
 typedef unsigned __int64 OGUint64;
 
+typedef double           OGFloat;
+
 typedef void             OGVoid;
 //BOOL Type
 typedef int              OGBool;
 #define OG_FALSE         0
 #define OG_TRUE          1
-#define OG_NULL          ((void*)(0))
+#define OG_NULL          0
 //Result Type
 typedef int              OGResult;
 #define OG_S_OK          1

@@ -1,15 +1,15 @@
 #ifndef __OG_EXTTYPE_H__
 #define __OG_EXTTYPE_H__
 
-typedef SYSTEMTIME S_OGTime;
-void OGGetTime(S_OGTime& tm);
+typedef SYSTEMTIME OGTime;
+void OGGetTime(OGTime& tm);
 
 
 
 
 //////////////////////////////////////////////////////////////////////////
 //implementation
-inline void OGGetTime( S_OGTime& tm )
+inline void OGGetTime( OGTime& tm )
 {
     GetSystemTime(&tm);
 }

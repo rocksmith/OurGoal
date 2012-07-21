@@ -185,6 +185,38 @@
 				>
 			</File>
 			<File
+				RelativePath=".\C_OGEvent.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\C_OGMileStone.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\C_OGProduct.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\C_OGProductGroup.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\C_OGProject.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\C_OGProjectGroup.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\C_OGTask.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\C_OGTaskGroup.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\C_OGUser.cpp"
 				>
 			</File>
@@ -245,11 +277,47 @@
 				>
 			</File>
 			<File
+				RelativePath=".\C_OGEvent.h"
+				>
+			</File>
+			<File
+				RelativePath=".\C_OGMileStone.h"
+				>
+			</File>
+			<File
+				RelativePath=".\C_OGProduct.h"
+				>
+			</File>
+			<File
+				RelativePath=".\C_OGProductGroup.h"
+				>
+			</File>
+			<File
+				RelativePath=".\C_OGProject.h"
+				>
+			</File>
+			<File
+				RelativePath=".\C_OGProjectGroup.h"
+				>
+			</File>
+			<File
+				RelativePath=".\C_OGTask.h"
+				>
+			</File>
+			<File
+				RelativePath=".\C_OGTaskGroup.h"
+				>
+			</File>
+			<File
 				RelativePath=".\C_OGUser.h"
 				>
 			</File>
 			<File
 				RelativePath="..\..\include\OGBaseType.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\include\OGCore\OGCoreType.h"
 				>
 			</File>
 			<File

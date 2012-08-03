@@ -1,12 +1,11 @@
 #include "StdAfx.h"
 #include "C_OGUser.h"
 #include "OGCore/OGCoreType.h"
-C_OGUser::C_OGUser(const OGTime& tmCreate)
-    :C_OGCoreObject(OGString(STR_CORETYPE_USER), tmCreate)
+C_OGUser::C_OGUser()
+    :C_OGCoreObject(STR_CORETYPE_USER)
 {
-    OGString strName = _T("role");
-    OGString strVal = _T("default user");
-    AddPropertyStr(strName, strVal);
+    AddPropertyStr(_T("Role"), _T(""));
+    AddPropertyStr(_T("Name"), _T(""));
 }
 
 C_OGUser::~C_OGUser(void)

@@ -2,22 +2,15 @@
 #include "C_OGTask.h"
 #include "OGCore/OGCoreType.h"
 
-C_OGTask::C_OGTask( const OGTime& tmCreate )
-:C_OGCoreObject(OGString(STR_CORETYPE_TASK), tmCreate)
+C_OGTask::C_OGTask()
+:C_OGCoreObject(STR_CORETYPE_TASK)
 {
-    OGString strVal = _T("");
-
-    OGString strName = _T("start time");
-    AddPropertyTime(strName, tmCreate);
-
-    strName = _T("end time");
-    AddPropertyTime(strName, tmCreate);
-
-    strName = _T("title");
-    AddPropertyStr(strName, strVal);
-
-    strName = _T("description");
-    AddPropertyStr(strName, strVal);
+    OGTime tmCreate;
+    OGGetTime(tmCreate);
+    AddPropertyTime(_T("Start"), tmCreate);
+    AddPropertyTime(_T("End"), tmCreate);
+    AddPropertyStr(_T("Title"), _T(""));
+    AddPropertyStr(_T("Description"), _T(""));
 
 }
 

@@ -5,6 +5,6 @@ class C_OGTaskGroup :
     public C_OGCoreObject
 {
 public:
-    C_OGTaskGroup(const OGTime& tmCreate);
+    C_OGTaskGroup();
     virtual ~C_OGTaskGroup(void);
 };

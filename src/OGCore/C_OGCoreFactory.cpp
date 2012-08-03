@@ -13,50 +13,48 @@ C_OGCoreFactory::~C_OGCoreFactory(void)
 {
 }
 
-C_OGCoreObject* C_OGCoreFactory::CreateObject( const OGString& strType )
+C_OGCoreObject* C_OGCoreFactory::CreateObject( OGLPCSTR szType )
 {
-    OGTime tmCreate;
-    OGGetTime(tmCreate);
-    if (OGStriCmp(strType.c_str(), STR_CORETYPE_USER) == 0)
+    if (OGStriCmp(szType, STR_CORETYPE_USER) == 0)
     {
-        return new C_OGUser(tmCreate);
+        return new C_OGUser();
     }
-    else if (OGStriCmp(strType.c_str(), STR_CORETYPE_TASK) == 0)
+    else if (OGStriCmp(szType, STR_CORETYPE_TASK) == 0)
     {
         //TODO:
         return (C_OGCoreObject*)OG_NULL;
     }
-    else if (OGStriCmp(strType.c_str(), STR_CORETYPE_TASKGROUP) == 0)
+    else if (OGStriCmp(szType, STR_CORETYPE_TASKGROUP) == 0)
     {
         //TODO:
         return (C_OGCoreObject*)OG_NULL;
     }
-    else if (OGStriCmp(strType.c_str(), STR_CORETYPE_PROJECT) == 0)
+    else if (OGStriCmp(szType, STR_CORETYPE_PROJECT) == 0)
     {
         //TODO:
         return (C_OGCoreObject*)OG_NULL;
     }
-    else if (OGStriCmp(strType.c_str(), STR_CORETYPE_PROJECTGROUP) == 0)
+    else if (OGStriCmp(szType, STR_CORETYPE_PROJECTGROUP) == 0)
     {
         //TODO:
         return (C_OGCoreObject*)OG_NULL;
     }
-    else if (OGStriCmp(strType.c_str(), STR_CORETYPE_PRODUCT) == 0)
+    else if (OGStriCmp(szType, STR_CORETYPE_PRODUCT) == 0)
     {
         //TODO:
         return (C_OGCoreObject*)OG_NULL;
     }
-    else if (OGStriCmp(strType.c_str(), STR_CORETYPE_PRODUCTGROUP) == 0)
+    else if (OGStriCmp(szType, STR_CORETYPE_PRODUCTGROUP) == 0)
     {
         //TODO:
         return (C_OGCoreObject*)OG_NULL;
     }
-    else if (OGStriCmp(strType.c_str(), STR_CORETYPE_EVENT) == 0)
+    else if (OGStriCmp(szType, STR_CORETYPE_EVENT) == 0)
     {
         //TODO:
         return (C_OGCoreObject*)OG_NULL;
     }
-    else if (OGStriCmp(strType.c_str(), STR_CORETYPE_MILESTONE) == 0)
+    else if (OGStriCmp(szType, STR_CORETYPE_MILESTONE) == 0)
     {
         //TODO:
         return (C_OGCoreObject*)OG_NULL;

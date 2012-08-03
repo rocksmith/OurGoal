@@ -6,9 +6,8 @@
 class C_OGCoreObject
 {
 public:
-    C_OGCoreObject(const OGString& strType, const OGTime& tmCreate);
+    C_OGCoreObject(OGLPCSTR szType);
     virtual ~C_OGCoreObject(void);
-    OGVoid SetLastModifyTime(const OGTime& tm);
 
     OGVoid GetCoreType(OGString& strType);
     OGVoid GetCreateTime(OGTime& tm);
@@ -16,25 +15,23 @@ public:
 
 protected:
     //Add property
-    OGBool AddPropertyInt(const OGString& strName, const OGInt32& iDefault);
-    OGBool AddPropertyStr(const OGString& strName, const OGString& strDefault);
-    OGBool AddPropertyTime(const OGString& strName, const OGTime& tmDefault);
-    OGBool AddPropertyFloat(const OGString& strName, const OGFloat& fDefault);
+    OGBool AddPropertyInt(OGLPCSTR szName, OGInt32 iDefault);
+    OGBool AddPropertyStr(OGLPCSTR szName, OGLPCSTR szDefault);
+    OGBool AddPropertyTime(OGLPCSTR szName, OGTime tmDefault);
+    OGBool AddPropertyFloat(OGLPCSTR szName, OGFloat fDefault);
     //SetProperty
-    OGBool SetPropertyInt(const OGString& strName, const OGInt32& iVal);
-    OGBool SetPropertyStr(const OGString& strName, const OGString& strVal);
-    OGBool SetPropertyTime(const OGString& strName, const OGTime& tmVal);
-    OGBool SetPropertyFloat(const OGString& strName, const OGFloat& fVal);
+    OGBool SetPropertyInt(OGLPCSTR szName, OGInt32 iVal);
+    OGBool SetPropertyStr(OGLPCSTR szName, OGLPCSTR szVal);
+    OGBool SetPropertyTime(OGLPCSTR szName, OGTime tmVal);
+    OGBool SetPropertyFloat(OGLPCSTR szName, OGFloat fVal);
     //GetProperty
-    OGBool GetPropertyInt(const OGString& strName, OGInt32& iVal);
-    OGBool GetPropertyStr(const OGString& strName, OGString& strVal);
-    OGBool GetPropertyTime(const OGString& strName, OGTime& tmVal);
-    OGBool GetPropertyFloat(const OGString& strName, OGFloat& fVal);
+    OGBool GetPropertyInt(OGLPCSTR szName, OGInt32& iVal);
+    OGBool GetPropertyStr(OGLPCSTR szName, OGString& strVal);
+    OGBool GetPropertyTime(OGLPCSTR szName, OGTime& tmVal);
+    OGBool GetPropertyFloat(OGLPCSTR szName, OGFloat& fVal);
 
 private:
     OGString m_strType;
-    OGTime m_tmCreate;
-    OGTime m_tmLastModified;
     //property related
     struct SIntProp{
         OGString strName;
@@ -62,22 +59,8 @@ private:
     std::vector<SFloatProp*> m_ProplistFloat;
 };
 
-inline OGVoid C_OGCoreObject::SetLastModifyTime(const OGTime& tm)
-{
-    m_tmLastModified = tm;
-}
 
 inline OGVoid C_OGCoreObject::GetCoreType(OGString& strType)
 {
     strType = m_strType;
-}
-
-inline OGVoid C_OGCoreObject::GetCreateTime(OGTime& tm)
-{
-    tm = m_tmCreate;
-}
-
-inline OGVoid C_OGCoreObject::GetLastModifyTime(OGTime& tm)
-{
-    tm = m_tmLastModified;
 }

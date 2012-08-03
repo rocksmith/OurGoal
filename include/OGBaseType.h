@@ -14,8 +14,10 @@ typedef unsigned int     OGUint32;
 typedef unsigned __int64 OGUint64;
 
 typedef double           OGFloat;
-
 typedef void             OGVoid;
+typedef OGChar*          OGLPSTR;
+typedef const OGChar*    OGLPCSTR;
+
 //BOOL Type
 typedef int              OGBool;
 #define OG_FALSE         0

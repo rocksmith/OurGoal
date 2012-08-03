@@ -1,10 +1,9 @@
 #include "StdAfx.h"
 #include "C_OGCoreObject.h"
 
-C_OGCoreObject::C_OGCoreObject(const OGString& strType, const OGTime& tmCreate )
+C_OGCoreObject::C_OGCoreObject(OGLPCSTR szType)
 {
-    m_strType = strType;
-    m_tmCreate = tmCreate;
+    m_strType = szType;
 }
 
 C_OGCoreObject::~C_OGCoreObject(void)
@@ -32,80 +31,80 @@ C_OGCoreObject::~C_OGCoreObject(void)
     m_ProplistFloat.clear();
 }
 
-OGBool C_OGCoreObject::AddPropertyInt( const OGString& strName, const OGInt32& iDefault )
+OGBool C_OGCoreObject::AddPropertyInt( OGLPCSTR szName, OGInt32 iDefault )
 {
     for (UINT i = 0; i < m_ProplistInt.size(); ++i)
     {
-        if (0 == OGStriCmp(strName.c_str(), m_ProplistInt[i]->strName.c_str()))
+        if (0 == OGStriCmp(szName, m_ProplistInt[i]->strName.c_str()))
         {
             return OG_FALSE;
         }
     }
     SIntProp* prop = new SIntProp();
-    prop->strName = strName;
+    prop->strName = szName;
     prop->iDefVal = iDefault;
     prop->iVal = iDefault;
     m_ProplistInt.push_back(prop);
     return OG_TRUE;
 }
 
-OGBool C_OGCoreObject::AddPropertyStr( const OGString& strName, const OGString& strDefault )
+OGBool C_OGCoreObject::AddPropertyStr( OGLPCSTR szName, OGLPCSTR szDefault )
 {
     for (UINT i = 0; i < m_ProplistStr.size(); ++i)
     {
-        if (0 == OGStriCmp(strName.c_str(), m_ProplistStr[i]->strName.c_str()))
+        if (0 == OGStriCmp(szName, m_ProplistStr[i]->strName.c_str()))
         {
             return OG_FALSE;
         }
     }
     SStrProp* prop = new SStrProp();
-    prop->strName = strName;
-    prop->strDefVal = strDefault;
-    prop->strVal = strDefault;
+    prop->strName = szName;
+    prop->strDefVal = szDefault;
+    prop->strVal = szDefault;
     m_ProplistStr.push_back(prop);
     return OG_TRUE;
 }
 
-OGBool C_OGCoreObject::AddPropertyTime( const OGString& strName, const OGTime& tmDefault )
+OGBool C_OGCoreObject::AddPropertyTime( OGLPCSTR szName, OGTime tmDefault )
 {
     for (UINT i = 0; i < m_ProplistTime.size(); ++i)
     {
-        if (0 == OGStriCmp(strName.c_str(), m_ProplistTime[i]->strName.c_str()))
+        if (0 == OGStriCmp(szName, m_ProplistTime[i]->strName.c_str()))
         {
             return OG_FALSE;
         }
     }
     STmProp* prop = new STmProp();
-    prop->strName = strName;
+    prop->strName = szName;
     prop->tmDefVal = tmDefault;
     prop->tmVal = tmDefault;
     m_ProplistTime.push_back(prop);
     return OG_TRUE;
 }
 
-OGBool C_OGCoreObject::AddPropertyFloat( const OGString& strName, const OGFloat& fDefault )
+OGBool C_OGCoreObject::AddPropertyFloat( OGLPCSTR szName, OGFloat fDefault )
 {
     for (UINT i = 0; i < m_ProplistFloat.size(); ++i)
     {
-        if (0 == OGStriCmp(strName.c_str(), m_ProplistFloat[i]->strName.c_str()))
+        if (0 == OGStriCmp(szName, m_ProplistFloat[i]->strName.c_str()))
         {
             return OG_FALSE;
         }
     }
     SFloatProp* prop = new SFloatProp();
-    prop->strName = strName;
+    prop->strName = szName;
     prop->fDefVal = fDefault;
     prop->fVal = fDefault;
     m_ProplistFloat.push_back(prop);
     return OG_TRUE;
 }
 
-OGBool C_OGCoreObject::SetPropertyInt( const OGString& strName, const OGInt32& iVal )
+OGBool C_OGCoreObject::SetPropertyInt( OGLPCSTR szName, OGInt32 iVal )
 {
     SIntProp* pProp = NULL;
     for (UINT i = 0; i < m_ProplistInt.size(); ++i)
     {
-        if (0 == OGStriCmp(strName.c_str(), m_ProplistInt[i]->strName.c_str()))
+        if (0 == OGStriCmp(szName, m_ProplistInt[i]->strName.c_str()))
         {
             pProp = m_ProplistInt[i];
             break;
@@ -116,15 +115,16 @@ OGBool C_OGCoreObject::SetPropertyInt( const OGString& strName, const OGInt32& i
         return OG_FALSE;
     }
     pProp->iVal = iVal;
+
     return OG_TRUE;
 }
 
-OGBool C_OGCoreObject::SetPropertyStr( const OGString& strName, const OGString& strVal )
+OGBool C_OGCoreObject::SetPropertyStr( OGLPCSTR szName, OGLPCSTR szVal )
 {
     SStrProp* pProp = OG_NULL;
     for (UINT i = 0; i < m_ProplistStr.size(); ++i)
     {
-        if (0 == OGStriCmp(strName.c_str(), m_ProplistStr[i]->strName.c_str()))
+        if (0 == OGStriCmp(szName, m_ProplistStr[i]->strName.c_str()))
         {
             pProp = m_ProplistStr[i];
             break;
@@ -134,16 +134,17 @@ OGBool C_OGCoreObject::SetPropertyStr( const OGString& strName, const OGString& 
     {
         return OG_FALSE;
     }
-    pProp->strVal = strVal;
+    pProp->strVal = szVal;
+
     return OG_TRUE;
 }
 
-OGBool C_OGCoreObject::SetPropertyTime( const OGString& strName, const OGTime& tmVal )
+OGBool C_OGCoreObject::SetPropertyTime( OGLPCSTR szName, OGTime tmVal )
 {
     STmProp* pProp = OG_NULL;
     for (UINT i = 0; i < m_ProplistTime.size(); ++i)
     {
-        if (0 == OGStriCmp(strName.c_str(), m_ProplistTime[i]->strName.c_str()))
+        if (0 == OGStriCmp(szName, m_ProplistTime[i]->strName.c_str()))
         {
             pProp = m_ProplistTime[i];
             break;
@@ -154,15 +155,16 @@ OGBool C_OGCoreObject::SetPropertyTime( const OGString& strName, const OGTime& t
         return OG_FALSE;
     }
     pProp->tmVal = tmVal;
+
     return OG_TRUE;
 }
 
-OGBool C_OGCoreObject::SetPropertyFloat( const OGString& strName, const OGFloat& fVal )
+OGBool C_OGCoreObject::SetPropertyFloat( OGLPCSTR szName, OGFloat fVal )
 {
     SFloatProp* pProp = OG_NULL;
     for (UINT i = 0; i < m_ProplistFloat.size(); ++i)
     {
-        if (0 == OGStriCmp(strName.c_str(), m_ProplistFloat[i]->strName.c_str()))
+        if (0 == OGStriCmp(szName, m_ProplistFloat[i]->strName.c_str()))
         {
             pProp = m_ProplistFloat[i];
             break;
@@ -173,15 +175,16 @@ OGBool C_OGCoreObject::SetPropertyFloat( const OGString& strName, const OGFloat&
         return OG_FALSE;
     }
     pProp->fVal = fVal;
+
     return OG_TRUE;
 }
 
-OGBool C_OGCoreObject::GetPropertyInt( const OGString& strName, OGInt32& iVal )
+OGBool C_OGCoreObject::GetPropertyInt( OGLPCSTR szName, OGInt32& iVal )
 {
     SIntProp* pProp = OG_NULL;
     for (UINT i = 0; i < m_ProplistInt.size(); ++i)
     {
-        if (0 == OGStriCmp(strName.c_str(), m_ProplistInt[i]->strName.c_str()))
+        if (0 == OGStriCmp(szName, m_ProplistInt[i]->strName.c_str()))
         {
             pProp = m_ProplistInt[i];
             break;
@@ -195,12 +198,12 @@ OGBool C_OGCoreObject::GetPropertyInt( const OGString& strName, OGInt32& iVal )
     return OG_TRUE;
 }
 
-OGBool C_OGCoreObject::GetPropertyStr( const OGString& strName, OGString& strVal )
+OGBool C_OGCoreObject::GetPropertyStr( OGLPCSTR szName, OGString& strVal )
 {
     SStrProp* pProp = OG_NULL;
     for (UINT i = 0; i < m_ProplistStr.size(); ++i)
     {
-        if (0 == OGStriCmp(strName.c_str(), m_ProplistStr[i]->strName.c_str()))
+        if (0 == OGStriCmp(szName, m_ProplistStr[i]->strName.c_str()))
         {
             pProp = m_ProplistStr[i];
             break;
@@ -214,12 +217,12 @@ OGBool C_OGCoreObject::GetPropertyStr( const OGString& strName, OGString& strVal
     return OG_TRUE;
 }
 
-OGBool C_OGCoreObject::GetPropertyTime( const OGString& strName, OGTime& tmVal )
+OGBool C_OGCoreObject::GetPropertyTime( OGLPCSTR szName, OGTime& tmVal )
 {
     STmProp* pProp = OG_NULL;
     for (UINT i = 0; i < m_ProplistTime.size(); ++i)
     {
-        if (0 == OGStriCmp(strName.c_str(), m_ProplistTime[i]->strName.c_str()))
+        if (0 == OGStriCmp(szName, m_ProplistTime[i]->strName.c_str()))
         {
             pProp = m_ProplistTime[i];
             break;
@@ -233,12 +236,12 @@ OGBool C_OGCoreObject::GetPropertyTime( const OGString& strName, OGTime& tmVal )
     return OG_TRUE;
 }
 
-OGBool C_OGCoreObject::GetPropertyFloat( const OGString& strName, OGFloat& fVal )
+OGBool C_OGCoreObject::GetPropertyFloat( OGLPCSTR szName, OGFloat& fVal )
 {
     SFloatProp* pProp = OG_NULL;
     for (UINT i = 0; i < m_ProplistFloat.size(); ++i)
     {
-        if (0 == OGStriCmp(strName.c_str(), m_ProplistFloat[i]->strName.c_str()))
+        if (0 == OGStriCmp(szName, m_ProplistFloat[i]->strName.c_str()))
         {
             pProp = m_ProplistFloat[i];
             break;

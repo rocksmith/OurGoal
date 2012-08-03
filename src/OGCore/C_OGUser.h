@@ -5,6 +5,6 @@ class C_OGUser :
     public C_OGCoreObject
 {
 public:
-    C_OGUser(const OGTime& tmCreate);
+    C_OGUser();
     virtual ~C_OGUser(void);
 };

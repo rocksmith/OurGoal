@@ -9,7 +9,7 @@ public://class method
     static C_OGCoreFactory* Instance();
 public://object method
     virtual ~C_OGCoreFactory(void);
-    C_OGCoreObject* CreateObject(const OGString& strType);
+    C_OGCoreObject* CreateObject(OGLPCSTR szType);
 private:
     static C_OGCoreFactory* _pInstance;
 };

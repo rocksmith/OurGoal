@@ -2,20 +2,12 @@
 #include "C_OGProduct.h"
 #include "OGCore/OGCoreType.h"
 
-C_OGProduct::C_OGProduct( const OGTime& tmCreate )
-:C_OGCoreObject(OGString(STR_CORETYPE_PRODUCT), tmCreate)
+C_OGProduct::C_OGProduct()
+:C_OGCoreObject(STR_CORETYPE_PRODUCT)
 {
-    OGString strVal = _T("");
-
-    OGString strName = _T("product name");
-    AddPropertyStr(strName, strVal);
-
-    strName = _T("description");
-    AddPropertyStr(strName, strVal);
-
-    strName = _T("version");
-    AddPropertyStr(strName, strVal);
-
+    AddPropertyStr(_T("Name"), _T(""));
+    AddPropertyStr(_T("Description"), _T(""));
+    AddPropertyStr(_T("Version"), _T(""));
 }
 
 C_OGProduct::~C_OGProduct(void)

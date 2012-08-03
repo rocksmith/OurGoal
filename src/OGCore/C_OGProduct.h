@@ -5,6 +5,6 @@ class C_OGProduct :
     public C_OGCoreObject
 {
 public:
-    C_OGProduct(const OGTime& tmCreate);
+    C_OGProduct();
     virtual ~C_OGProduct(void);
 };

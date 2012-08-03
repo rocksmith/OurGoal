@@ -5,6 +5,6 @@ class C_OGEvent :
     public C_OGCoreObject
 {
 public:
-    C_OGEvent(const OGTime& tmCreate);
+    C_OGEvent();
     virtual ~C_OGEvent(void);
 };

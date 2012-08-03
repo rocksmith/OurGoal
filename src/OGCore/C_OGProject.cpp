@@ -3,16 +3,11 @@
 #include "OGCore/OGCoreType.h"
 
 
-C_OGProject::C_OGProject( const OGTime& tmCreate )
-:C_OGCoreObject(OGString(STR_CORETYPE_PROJECT), tmCreate)
+C_OGProject::C_OGProject()
+:C_OGCoreObject(STR_CORETYPE_PROJECT)
 {
-    OGString strVal = _T("");
-
-    OGString strName = _T("project name");
-    AddPropertyStr(strName, strVal);
-
-    strName = _T("description");
-    AddPropertyStr(strName, strVal);
+    AddPropertyStr(_T("Name"), _T(""));
+    AddPropertyStr(_T("Description"), _T(""));
 
 }
 
